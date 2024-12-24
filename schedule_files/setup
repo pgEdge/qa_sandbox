@@ -1,0 +1,6 @@
+##
+
+This will contain a list of setup scripts:
+
+t/setup_01_install.py
+t/cluster-init.py
