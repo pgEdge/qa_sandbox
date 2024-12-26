@@ -1,4 +1,4 @@
-import sys, os, psycopg, json, subprocess, shutil, re, csv, socket
+import sys, os, psycopg2, json, subprocess, shutil, re, csv, socket
 from dotenv import load_dotenv
 from psycopg import sql
 
