@@ -472,14 +472,14 @@ def main():
         for test in testList:
             print(test)
 
-            exitCode = runTests(testList)
+    exitCode = runTests(testList)
          
     print("complete")
 
     global glLogger
     glLogger.close()
 
-    return exitCode
+    sys.exit(exitCode)
     
 if __name__ == "__main__":
     main()
