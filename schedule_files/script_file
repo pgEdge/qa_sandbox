@@ -1,2 +1,4 @@
-t/test_name.py
-t/test_two.py
+t/setup_01_install.py
+t/cluster-init.py
+t/cluster-list-nodes.py
+t/cleanup_03_remove_nc.py
