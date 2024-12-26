@@ -23,7 +23,7 @@ jobs:
           python-version: '3.x'
 
       # Step 3: Install Python dependencies with pip
-      - name: Install dependencies
+      - name: Install pip dependencies
         run: |
           python -m pip install --upgrade pip
           pip install python-dotenv psycopg
@@ -35,17 +35,17 @@ jobs:
           sudo apt update -y
           sudo apt install -y curl perl cpanminus
 
-      # Step 5: Install yum dependencies
-      - name: Update and install yum dependencies
-        run: |
-          sudo yum update -y
-          sudo yum install -y perl-devel
+#      # Step 5: Install yum dependencies
+#      - name: Update and install yum dependencies for perl scripts
+#        run: |
+#          sudo yum update -y
+#          sudo yum install -y perl-devel
 
-      # Step 5: Install dnf dependencies
-      - name: Update and install dnf dependencies
-        run: |
-          sudo dnf update -y
-          sudo dnf install -y perl-File-Which perl-Try-Tiny perl-JSON perl-List-MoreUtils perl-DBD-Pg perl-DBD-DBI python3-psycopg2
+#      # Step 6: Install dnf dependencies
+#      - name: Update and install dnf dependencies for perl scripts
+#        run: |
+#          sudo dnf update -y
+#          sudo dnf install -y perl-File-Which perl-Try-Tiny perl-JSON perl-List-MoreUtils perl-DBD-Pg perl-DBD-DBI python3-psycopg2
 
       # Step 6: Source environment variables
       - name: source environment variables
