@@ -35,18 +35,6 @@ jobs:
           sudo apt update -y
           sudo apt install -y curl perl cpanminus
 
-#      # Step 5: Install yum dependencies
-#      - name: Update and install yum dependencies for perl scripts
-#        run: |
-#          sudo yum update -y
-#          sudo yum install -y perl-devel
-
-#      # Step 6: Install dnf dependencies
-#      - name: Update and install dnf dependencies for perl scripts
-#        run: |
-#          sudo dnf update -y
-#          sudo dnf install -y perl-File-Which perl-Try-Tiny perl-JSON perl-List-MoreUtils perl-DBD-Pg perl-DBD-DBI python3-psycopg2
-
       # Step 6: Source environment variables
       - name: source environment variables
         run: |
@@ -56,11 +44,18 @@ jobs:
       # Step 5: Run the Python scripts with runner.py
       - name: Run Python scripts
         run: |
-          python runner.py -s schedule_files/setup
-          python runner.py -s schedule_files/testing
-          python runner.py -s schedule_files/teardown
+          runner.py -s schedule_files/setup
+          runner.py -s schedule_files/testing
+          runner.py -s schedule_files/teardown
 
-      # Step 6: Verify output (GitHub Actions should fail the job if any script raises an error)
+      # Step 6: Save the latest.log file
+      - name: Save the latest.log file
+        uses: actions/upload-artifact@v3
+        with:
+          name: latest.log
+          path: latest.log
+
+      # Step 7: Verify output (GitHub Actions should fail the job if any script raises an error)
       - name: Verify success
         if: success()
         run: echo "All scripts executed successfully. Pull request can be merged."
