@@ -48,7 +48,12 @@ jobs:
           python runner.py -s schedule_files/testing
           python runner.py -s schedule_files/teardown
 
-      
+      #Step 7: Upload log file as artifact of run
+      - name: Upload Log File as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: latest-log
+          path: latest.log      
 
       # Step 7: Verify output (GitHub Actions should fail the job if any script raises an error)
       - name: Verify success

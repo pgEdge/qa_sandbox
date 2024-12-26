@@ -502,7 +502,7 @@ def main():
     global glLogger
     glLogger.close()
    
-    maillog()
+#    maillog()
 
 if __name__ == "__main__":
     main()
