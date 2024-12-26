@@ -16,24 +16,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Set up Python environment
+
+      # Step 2: Install apt dependencies
+      - name: Install apt dependencies
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y curl perl cpanminus msmtp python-pip
+
+      # Step 3: Set up Python environment
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
-      # Step 3: Install Python dependencies with pip
+      # Step 4: Install Python dependencies with pip
       - name: Install pip dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install python-dotenv psycopg
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
-      # Step 4: Install apt dependencies
-      - name: Install apt dependencies
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y curl perl cpanminus msmtp
+          pip install python-dotenv psycopg psycopg2
 
       # Step 5: Source environment variables
       - name: source environment variables
