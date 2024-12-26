@@ -44,9 +44,9 @@ jobs:
       # Step 5: Run the Python scripts with runner.py
       - name: Run Python scripts
         run: |
-          runner.py -s schedule_files/setup
-          runner.py -s schedule_files/testing
-          runner.py -s schedule_files/teardown
+          python runner.py -s schedule_files/setup
+          python runner.py -s schedule_files/testing
+          python runner.py -s schedule_files/teardown
 
       # Step 6: Save the latest.log file
       - name: Save the latest.log file
