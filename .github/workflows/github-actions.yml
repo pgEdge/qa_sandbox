@@ -33,7 +33,13 @@ jobs:
       - name: Install apt dependencies
         run: |
           sudo apt update -y
-          sudo apt install -y curl perl cpanminus
+          sudo apt install -y curl perl cpanminus yum
+
+      # Step 5: Install yum dependencies
+      - name: Update and install yum dependencies
+        run: |
+          sudo yum update -y
+          sudo yum install -y perl-devel
 
       # Step 5: Install dnf dependencies
       - name: Update and install dnf dependencies
