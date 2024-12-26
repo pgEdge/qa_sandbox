@@ -21,7 +21,7 @@ jobs:
       - name: Install apt dependencies
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y curl perl cpanminus msmtp libpq-dev python3-dotenv libffi-dev libssl-dev libkrb5-dev zlib1g-dev
+          sudo apt-get install -y curl perl cpanminus msmtp libpq-dev python3-psycopg2 postgresql python3-dotenv libffi-dev libssl-dev libkrb5-dev zlib1g-dev
 
       # Step 4: Install Python dependencies with pip
       - name: Install pip dependencies
