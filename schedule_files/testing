@@ -1,7 +1,4 @@
-## This file contains the test scripts we'll execute:
+## This file contains the test scripts we'll execute
 
-#t/cluster-remove-node.py
-#t/cluster-add-node.py
 t/cluster-list-nodes.py
-#t/cluster-replication-check.py
 
