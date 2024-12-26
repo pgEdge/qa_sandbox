@@ -28,14 +28,19 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+      # Step 3: Source environment
+      - name: source environment variables
+        run: |
+          source t/lib/config.env
+
       # Step 4: Run the Python scripts with runner.py
       - name: Run Python scripts
         run: |
-          python runner.py schedule_files/setup
-          python runner.py schedule_files/testing
-          python runner.py schedule_files/teardown
+          python runner.py -s schedule_files/setup
+          python runner.py -s schedule_files/testing
+          python runner.py -s schedule_files/teardown
 
-      # Step 5: Verify output (GitHub Actions should automatically fail the job if any script raises an error)
+      # Step 5: Verify output (GitHub Actions should fail the job if any script raises an error)
       - name: Verify success
         if: success()
         run: echo "All scripts executed successfully. Pull request can be merged."
