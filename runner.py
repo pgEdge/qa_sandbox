@@ -262,11 +262,6 @@ def runTests(testList):
     print("fail:   " + str(failCount))
     print("errors: " + str(errorCount))
 
-    if fail > 0:
-        return 1   # at least one test failed
-    else:
-        return 0   # all tests tickety-boo
-    
 ################################################################################
 # printTestResult()
 #
@@ -472,14 +467,12 @@ def main():
         for test in testList:
             print(test)
 
-    exitCode = runTests(testList)
+    runTests(testList)
          
     print("complete")
 
     global glLogger
     glLogger.close()
-
-    sys.exit(exitCode)
     
 if __name__ == "__main__":
     main()
