@@ -1,4 +1,0 @@
-## This file contains scripts that gracefully tear down the test environment
-
-t/cleanup_03_remove_nc.py
-

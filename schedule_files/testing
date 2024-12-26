@@ -1,4 +1,0 @@
-## This file contains the test scripts we'll execute
-
-t/cluster-list-nodes.py
-

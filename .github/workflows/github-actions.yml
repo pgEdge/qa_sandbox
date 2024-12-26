@@ -44,9 +44,7 @@ jobs:
       # Step 6: Run the Python scripts with runner.py
       - name: Run Python scripts
         run: |
-          python runner.py -s schedule_files/setup
-          python runner.py -s schedule_files/testing
-          python runner.py -s schedule_files/teardown
+          python runner.py -s schedule_files/script_file
 
       #Step 7: Upload log file as artifact of run
       - name: Upload Log File as Artifact
