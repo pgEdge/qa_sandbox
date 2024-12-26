@@ -464,7 +464,7 @@ def maillog():
 
 # Open a plain text file for reading.  For this example, assume that
 # the text file contains only ASCII characters 
-    with open(./latest.log, 'rb') as fp:
+    with open("./latest.log", 'rb') as fp:
         # Create a text/plain message
         msg = MIMEText(fp.read())
 
