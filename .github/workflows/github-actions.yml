@@ -33,7 +33,7 @@ jobs:
       - name: Install apt dependencies
         run: |
           sudo apt update -y
-          sudo apt install -y curl perl perl-CPAN
+          sudo apt install -y curl perl cpanminus
 
       # Step 5: Install dnf dependencies
       - name: Update and install dnf dependencies
