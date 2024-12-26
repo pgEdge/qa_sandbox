@@ -28,7 +28,7 @@ jobs:
       - name: Install apt dependencies
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y curl perl cpanminus msmtp
+          sudo apt-get install -y curl perl cpanminus msmtp libpq-dev python3-psycopg2 libffi-dev libssl-dev libkrb5-dev zlib1g-dev
 
       # Step 5: Source environment variables
       - name: source environment variables
