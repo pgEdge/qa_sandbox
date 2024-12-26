@@ -454,6 +454,34 @@ def source_config_file(config_file):
 #  commnd-line arguments, then run each test (found in the testList) and finish
 #  up by printing a summary of the test run (pass count, fail count, error count)
 
+def maillog():
+
+    # Import smtplib for the actual sending function
+    import smtplib
+
+# Import the email modules we'll need
+    from email.mime.text import MIMEText
+
+# Open a plain text file for reading.  For this example, assume that
+# the text file contains only ASCII characters 
+    with open(./latest.log, 'rb') as fp:
+        # Create a text/plain message
+        msg = MIMEText(fp.read())
+
+# me == the sender's email address
+# you == the recipient's email address
+    msg['Subject'] = 'The contents of %s' % latest.log
+    msg['From'] = "susan@pgedge.com"
+    msg['To'] = "susan@pgedge.com"
+
+# Send the message via our own SMTP server, but don't include the
+# envelope header.
+    s = smtplib.SMTP('localhost')
+    s.sendmail(me, [you], msg.as_string())
+    s.quit()
+
+
+
 def main():
 
     testList = parseCmdLine()
@@ -473,6 +501,8 @@ def main():
 
     global glLogger
     glLogger.close()
-    
+   
+    maillog()
+
 if __name__ == "__main__":
     main()

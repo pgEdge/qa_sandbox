@@ -32,28 +32,23 @@ jobs:
       # Step 4: Install apt dependencies
       - name: Install apt dependencies
         run: |
-          sudo apt update -y
-          sudo apt install -y curl perl cpanminus
+          sudo apt-get update -y
+          sudo apt-get install -y curl perl cpanminus msmtp
 
-      # Step 6: Source environment variables
+      # Step 5: Source environment variables
       - name: source environment variables
         run: |
           source t/lib/config.env
           echo $REPO
 
-      # Step 5: Run the Python scripts with runner.py
+      # Step 6: Run the Python scripts with runner.py
       - name: Run Python scripts
         run: |
           python runner.py -s schedule_files/setup
           python runner.py -s schedule_files/testing
           python runner.py -s schedule_files/teardown
 
-      # Step 6: Save the latest.log file
-      - name: Save the latest.log file
-        uses: actions/upload-artifact@v3
-        with:
-          name: latest.log
-          path: latest.log
+      
 
       # Step 7: Verify output (GitHub Actions should fail the job if any script raises an error)
       - name: Verify success
