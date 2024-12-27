@@ -19,12 +19,14 @@ jobs:
           echo "Before pg_isready"
           sudo pg_isready
           echo "After pg_isready"
+          echo "This is who I am:"
+          echo ${{ github.actor }}
           sudo pg_config
           echo "After pg_config"
-          createuser -s -w -e lcusr        
+          sudo createuser -s -w -e lcusr -U postgres       
           echo "After createuser"
           ls -l /usr/lib/postgresql/14/bin
-
+          
 
       # Set up Python environment
       - name: Set up Python
