@@ -23,8 +23,11 @@ jobs:
           echo ${{ github.actor }}
           sudo pg_config
           echo "After pg_config"
-          sudo createuser -s -w -e lcusr -U postgres       
+          sudo -u createuser -s -w -e lcusr       
           echo "After createuser"
+          sudo -u psql \du
+          echo "After psql"
+
           ls -l /usr/lib/postgresql/14/bin
           
 
