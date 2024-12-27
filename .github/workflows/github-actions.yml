@@ -21,7 +21,7 @@ jobs:
       - name: Install apt dependencies
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y curl perl cpanminus libpq-dev python3-dev postgresql-server-dev-all python3-psycopg2 python3-dotenv
+          sudo apt-get install -y curl perl cpanminus libpq-dev python3-dev build-essential python3-psycopg2 python3-dotenv
 
       # Step 4: Install Python dependencies with pip
       - name: Install pip dependencies
