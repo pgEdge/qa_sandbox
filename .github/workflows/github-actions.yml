@@ -25,7 +25,7 @@ jobs:
           echo "After pg_config"
           sudo -u postgres createuser -s -w -e lcusr       
           echo "After createuser"
-          sudo -u postgres psql -C '\du'
+          sudo -u postgres psql -c '\du'
           echo "After psql"
 
           ls -l /usr/lib/postgresql/14/bin
