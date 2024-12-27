@@ -16,12 +16,13 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.8'
-
+           
       # Step 3: Install apt dependencies
       - name: Install apt dependencies
         run: |
           sudo apt-get update -y
           sudo apt-get install -y curl perl cpanminus libpq-dev python3-dev build-essential python3-psycopg2 python3-dotenv
+          echo $PATH
 
       # Step 4: Install Python dependencies with pip
       - name: Install pip dependencies
@@ -29,6 +30,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install psycopg
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          echo $PATH
 
       # Step 5: Source environment variables
       - name: source environment variables
