@@ -19,6 +19,8 @@ jobs:
           echo "Before pg_isready"
           sudo pg_isready
           echo "After pg_isready"
+          sudo pg_config
+          echo "After pg_config"
           sudo -u postgres createuser -s -w -e lcusr        
 
       # Set up Python environment
