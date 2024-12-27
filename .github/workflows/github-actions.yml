@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Start Postgres if it's here
+      # Start Postgres
       - name: start Postgres
         run: |
           sudo systemctl start postgresql.service
@@ -22,6 +22,9 @@ jobs:
           sudo pg_config
           echo "After pg_config"
           sudo -u postgres createuser -s -w -e lcusr        
+          echo "After createuser"
+          ls -l /usr/lib/postgresql/14/bin
+
 
       # Set up Python environment
       - name: Set up Python
