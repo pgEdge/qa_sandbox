@@ -15,6 +15,7 @@ jobs:
       - name: start Postgres
         run: |
           sudo systemctl start postgresql.service
+          sudo systemctl status postgresql.service           
 
       # Set up Python environment
       - name: Set up Python
