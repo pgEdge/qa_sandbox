@@ -28,7 +28,7 @@ num_nodes=3
 #print("*"*100)
 
 print(f"home_dir = {home_dir}\n")
-command = (f"cluster json-template {cluster_name} {dbname} {num_nodes} {usr} {pw} {pgv} {port}")
+command = (f"cluster json-create {cluster_name} {num_nodes} {dbname} {usr} --pg_ver = 17 --port = 6432")
 res=util_test.run_nc_cmd("This command should create a json file that defines a cluster", command, f"{home_dir}")
 print(f"res = {res}\n")
 
