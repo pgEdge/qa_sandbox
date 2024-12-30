@@ -58,7 +58,7 @@ jobs:
           sudo pip install psycopg
           sudo pip install psycopg2-binary
 
-          export $GITHUB_PATH=$GITHUB_PATH:$(python -c 'import site; print(site.getsitepackages()[0])')
+          export $GITHUB_PATH=$(python -c 'import site; print(site.getsitepackages()[0])')
           export $PATH=$PATH:/home/runner/work/qa_sandbox/qa_sandbox/t
           #sudo echo "export $(python -c 'import site; print(site.getsitepackages()[0])')" >> $GITHUB_PATH
           #echo ":/home/runner/work/qa_sandbox/qa_sandbox/t/" >> $GITHUB_PATH
@@ -66,7 +66,7 @@ jobs:
           echo $GITHUB_PATH
           echo $PATH
           #source $GITHUB_PATH
-          #source $PATH
+          # source $PATH
           
           
 
