@@ -47,7 +47,7 @@ jobs:
       # Disable SELinux
       - name: Disable SELinux
         run: |
-          echo sestatus
+          sestatus
 
       # Install apt dependencies
       - name: Install apt dependencies
