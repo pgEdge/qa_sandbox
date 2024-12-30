@@ -79,7 +79,7 @@ jobs:
       # Run the Python scripts with runner.py
       - name: Run Python scripts
         run: |
-          python runner.py -s schedule_files/old_cluster_json_syntax_schedule
+          python runner.py -s schedule_files/script_file
 
       # Upload log file as artifact of run
       - name: Upload Log File as Artifact
