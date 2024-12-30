@@ -1,6 +1,6 @@
 import sys, os, psycopg2, json, subprocess, shutil, re, csv, socket
 from dotenv import load_dotenv
-from psycopg import sql
+from psycopg2 import sql
 
 
 def EXIT_PASS():
