@@ -70,7 +70,11 @@ jobs:
           #source $GITHUB_PATH
           #source $PATH
           
-          
+      # Clone the test repo
+      - name: clone test case repo
+        run: |
+          cd /home/runner/work/qa_sandbox/qa_sandbox
+          ./git clone https://github.com/pgEdge/qa_sandbox.git          
 
       # Source environment variables
       - name: source environment variables
@@ -81,7 +85,7 @@ jobs:
       # Run the Python scripts with runner.py
       - name: Run Python scripts
         run: |
-          python runner.py -s schedule_files/script_file
+          python runner.py -s schedule_files/old_cluster_json_syntax_schedule
 
       # Upload log file as artifact of run
       - name: Upload Log File as Artifact
