@@ -44,11 +44,6 @@ jobs:
           cat id_rsa.pub >> authorized_keys
           chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
           
-      # Disable SELinux
-      - name: Disable SELinux
-        run: |
-          sestatus
-
       # Install apt dependencies
       - name: Install apt dependencies
         run: |
