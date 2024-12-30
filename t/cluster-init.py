@@ -38,6 +38,8 @@ new_path_0 = (f"{cwd}/{cluster_dir}/n1")
 new_path_1 = (f"{cwd}/{cluster_dir}/n2")
 new_path_2 = (f"{cwd}/{cluster_dir}/n3")
 
+print(f"cluster_dir: {cluster_dir}")
+print(f"cluster_name: {cluster_name}")
 
 with open(f"{cluster_dir}/{cluster_name}.json", 'r') as file:
     data = json.load(file)
