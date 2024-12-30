@@ -73,8 +73,7 @@ jobs:
       # Clone the test repo
       - name: clone test case repo
         run: |
-          cd /home/runner/work/qa_sandbox/qa_sandbox
-          ./git clone https://github.com/pgEdge/qa_sandbox.git          
+          git clone https://github.com/pgEdge/qa_sandbox.git          
 
       # Source environment variables
       - name: source environment variables
