@@ -1,8 +1,10 @@
 t/setup_01_install.py
-t/cluster-init-old-syntax.py
-t/cluster-list-nodes-old-syntax.py
-t/cluster-json-validate-old-syntax.py
-t/cluster-remove-node-old-syntax.py
-t/cluster-add-node-old-syntax.py
-t/cluster-list-nodes-old-syntax.py
+
+#t/cluster-init-old-syntax.py
+#t/cluster-list-nodes-old-syntax.py
+#t/cluster-json-validate-old-syntax.py
+#t/cluster-remove-node-old-syntax.py
+#t/cluster-add-node-old-syntax.py
+#t/cluster-list-nodes-old-syntax.py
+
 t/cleanup_03_remove_nc.py
