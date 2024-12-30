@@ -70,11 +70,6 @@ jobs:
           #source $GITHUB_PATH
           #source $PATH
           
-      # Clone the test repo
-      - name: clone test case repo
-        run: |
-          git clone https://github.com/pgEdge/qa_sandbox.git          
-
       # Source environment variables
       - name: source environment variables
         run: |
