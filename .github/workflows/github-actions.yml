@@ -30,13 +30,26 @@ jobs:
 
           ls -l /usr/lib/postgresql/14/bin
           
-
       # Set up Python environment
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.8'
            
+      # Configure passwordless ssh
+      - name: Configure passwordless ssh
+        run: |
+          ssh-keygen -t rsa
+          cd ~/.ssh
+          cat id_rsa.pub >> authorized_keys
+          chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
+          
+      # Disable SELinux
+      - name: Disable SELinux
+        run: |
+          sudo setenforce 0
+          echo sestatus
+
       # Install apt dependencies
       - name: Install apt dependencies
         run: |
