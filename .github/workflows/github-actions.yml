@@ -1,7 +1,12 @@
 name: Run Python Schedules
 run-name: ${{ github.actor }} is running the test schedules.
-on: [push]
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
 
+  
 jobs:
   run-scripts:
     runs-on: ubuntu-latest
