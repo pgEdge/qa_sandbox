@@ -60,7 +60,7 @@ jobs:
       # Source environment variables
       - name: source environment variables
         run: |
-          source t/lib/config.env
+          source test/t/lib/config.env
           echo $REPO
           echo $EDGE_HOME_DIR/cluster/$EDGE_CLUSTER/demo.json
 
