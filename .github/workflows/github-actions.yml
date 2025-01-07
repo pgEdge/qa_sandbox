@@ -69,10 +69,9 @@ jobs:
         run: |
           python test/runner.py -c test/t/lib/config.env -s test/schedule_files/script_file
         continue-on-error: true
-        
+
         #if: fail > 0 success is no
         
-
       # Upload log file as artifact of run
       - name: Upload Log File as Artifact
         uses: actions/upload-artifact@v4
@@ -84,6 +83,13 @@ jobs:
       - name: Verify success
         if: success()
         run: echo "All scripts executed successfully. Pull request can be merged."
+
+      - name: Evaluate Test Results
+        run: |
+          if grep -q "(fail)" latest.log; then
+            echo "Some of the test cases failed!"
+            exit 1
+          fi
 
 
 
