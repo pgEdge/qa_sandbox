@@ -33,4 +33,3 @@ if os.path.exists(ncdir):
     util_test.exit_message(f"Couldn't delete .pgpass from home")
 
 util_test.exit_message(f"Pass - {os.path.basename(__file__)}", 0)
-
