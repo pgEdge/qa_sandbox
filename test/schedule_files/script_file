@@ -1,5 +1,16 @@
+## Set up a two node cluster
 t/setup_01_install.py
-t/cluster-init.py
-#t/cluster-init-old-syntax.py
+t/setup_03_node_install.py
+t/setup_04_node_setup.py
 
+t/spock_2_node_create.py
+
+t/snowflake.py
+t/snowflake_script.py
+t/snowflake_spock_cmds.py
+
+## Remove components, Clean environment and free ports
+t/cleanup_01_node_remove.py
+
+# Delete the nc directory and pgpass file
 t/cleanup_03_remove_nc.py
