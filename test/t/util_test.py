@@ -35,7 +35,7 @@ def exit_message(p_msg, p_rc=1):
 
 def get_autoddl_conn(host,dbname,port,pw,usr):
     try:
-        conn = psycopg.connect(dbname=dbname, user=usr, host=host, port=port, password=pw)
+        conn = psycopg2.connect(dbname=dbname, user=usr, host=host, port=port, password=pw)
         conn.autocommit = True
         print("Your connection is established, with autocommit = True")
         return conn
@@ -236,7 +236,7 @@ def source_config_file(config_file):
 ## Get psql connection
 def get_pg_con(host,dbname,port,pw,usr):
   try:
-    con1 = psycopg.connect(dbname=dbname, user=usr, host=host, port=port, password=pw)
+    con1 = psycopg2.connect(dbname=dbname, user=usr, host=host, port=port, password=pw)
   except Exception as e:
     exit_message(e)
   return(con1)
@@ -244,7 +244,7 @@ def get_pg_con(host,dbname,port,pw,usr):
 ## Get psql connection - this is a no fail connection that returns authentication error information
 def get_nofail_pg_con(host,dbname,port,pw,usr):
   try:
-    con1 = psycopg.connect(dbname=dbname, user=usr, host=host, port=port, password=pw)
+    con1 = psycopg2.connect(dbname=dbname, user=usr, host=host, port=port, password=pw)
   except Exception as e:
     con1 = None
     print("The connection attempt failed")
