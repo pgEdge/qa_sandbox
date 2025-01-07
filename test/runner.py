@@ -504,7 +504,7 @@ def main():
     global glLogger
     glLogger.close()
 
-    ys.exit(scheduleResult)
+    sys.exit(scheduleResult)
 
 #    maillog()
 
