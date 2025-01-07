@@ -57,7 +57,7 @@ for n in range(1,numnodes+1):
                     if spockver in line:
                         print(f"Correct spock ver {spockver} is installed")
                     else:
-                        util_test.exit_message(f"Faild, wrong spock ver {spockver} installed")
+                        util_test.exit_message(f"Faild, wrong spock ver {spockver} installed",1)
     
     
     for key in modules.keys():
