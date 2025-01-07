@@ -262,6 +262,8 @@ def runTests(testList):
     print("fail:   " + str(failCount))
     print("errors: " + str(errorCount))
 
+    return failCount + errorCount
+
 ################################################################################
 # printTestResult()
 #
@@ -495,13 +497,15 @@ def main():
         for test in testList:
             print(test)
 
-    runTests(testList)
+    scheduleResult = runTests(testList)
          
     print("complete")
 
     global glLogger
     glLogger.close()
-   
+
+    ys.exit(scheduleResult)
+
 #    maillog()
 
 if __name__ == "__main__":
