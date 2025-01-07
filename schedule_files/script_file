@@ -1,5 +1,0 @@
-t/setup_01_install.py
-t/cluster-init.py
-#t/cluster-init-old-syntax.py
-
-t/cleanup_03_remove_nc.py
