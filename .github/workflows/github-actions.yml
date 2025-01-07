@@ -68,6 +68,8 @@ jobs:
       - name: Run Python scripts
         run: |
           python test/runner.py -c test/t/lib/config.env -s test/schedule_files/script_file
+        
+        continue-on-error: false
 
       # Upload log file as artifact of run
       - name: Upload Log File as Artifact
