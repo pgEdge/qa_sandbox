@@ -1,0 +1,98 @@
+SELECT pg_sleep(1);--to ensure all objects are replicated
+ pg_sleep 
+----------
+ 
+(1 row)
+
+-- Final AutoDDL validation for the 6100 series on n1 to ensure all the DROP TABLE performed in the 6100b files on n2 
+-- was auto replicated to n1.
+-- None of the Tables should exist and spock.tables should not contain any entries for these tables
+SET ROLE appuser;
+SET
+SET search_path TO s610, public;
+SET
+-- Final validation of all tables along with querying the spock.tables
+-- validating all tables dropped on n1
+\d+ employees
+Did not find any relation named "employees".
+SELECT * FROM get_table_repset_info('employees');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ departments
+Did not find any relation named "departments".
+SELECT * FROM get_table_repset_info('departments');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ projects
+Did not find any relation named "projects".
+SELECT * FROM get_table_repset_info('projects');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ employee_projects
+Did not find any relation named "employee_projects".
+SELECT * FROM get_table_repset_info('employee_projects');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ products
+Did not find any relation named "products".
+SELECT * FROM get_table_repset_info('products');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ "CaseSensitiveTable"
+Did not find any relation named ""CaseSensitiveTable"".
+SELECT * FROM get_table_repset_info('CaseSensitiveTable');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ test_tab1
+Did not find any relation named "test_tab1".
+SELECT * FROM get_table_repset_info('test_tab1');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ test_tab2
+Did not find any relation named "test_tab2".
+SELECT * FROM get_table_repset_info('test_tab2');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ test_tab3
+Did not find any relation named "test_tab3".
+SELECT * FROM get_table_repset_info('test_tab3');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ test_tab4
+Did not find any relation named "test_tab4".
+SELECT * FROM get_table_repset_info('test_tab4');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+\d+ test_tab5
+Did not find any relation named "test_tab5".
+SELECT * FROM get_table_repset_info('test_tab5');
+ nspname | relname | set_name 
+---------+---------+----------
+(0 rows)
+
+RESET ROLE;
+RESET
+--dropping the schema
+DROP SCHEMA s610 CASCADE;
+INFO:  DDL statement replicated.
+DROP SCHEMA
