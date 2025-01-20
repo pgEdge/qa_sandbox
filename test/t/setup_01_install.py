@@ -53,4 +53,3 @@ if res.returncode == 1:
     util_test.exit_message("Install of pgedge failed")
 
 util_test.exit_message(f"Pass - {os.path.basename(__file__)}", 0)
-
