@@ -1,0 +1,29 @@
+##
+t/setup_01_install.py
+t/setup_03_node_install.py
+t/setup_04_node_setup.py
+t/spock_2_node_create.py
+
+#northwind-install commands
+#
+t/northwind-install.py
+t/northwind-install_with_repset.py
+t/northwind-run.py
+t/northwind-validate.py
+t/northwind-remove.py
+#
+#Negative-Tests
+t/northwind-install_no_dbname.py
+t/northwind-install_invalid_dbname.py
+t/northwind-run_dependency_on_northwind-install.py
+t/northwind-install_valid_dbname_invalid_repsetname.py
+t/northwind-run_without_dbname.py
+t/northwind-run_without_offset.py
+t/northwind-validate_no_dbname.py
+t/northwind-validate_invalid_dbname.py
+t/northwind-remove_no_dbname.py
+t/northwind-remove_invalid_dbname.py
+
+##Teardown Scripts
+t/cleanup_01_node_remove.py
+t/cleanup_03_remove_nc.py

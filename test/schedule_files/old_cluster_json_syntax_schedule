@@ -1,0 +1,30 @@
+## Create a three node cluster, remove a node, and then add a node
+t/setup_01_install.py
+t/cluster-init-old-syntax.py
+t/cluster-remove-node-old-syntax.py
+t/cluster-add-node-old-syntax.py
+t/cluster-list-nodes-old-syntax.py
+
+## Remove components, Clean environment and free ports
+t/cleanup_01_node_remove.py
+t/cleanup_03_remove_nc.py
+
+## Run tests to validate syntax and version support
+t/setup_01_install.py
+t/cluster-create-json-old-syntax.py
+t/cluster-json-validate-old-syntax.py
+t/cluster-json-invalid-file-old-syntax.py
+t/cluster-init-bad-version-old-syntax.py
+t/cluster-init-bad-json-old-syntax.py
+
+## Remove components, Clean environment and free ports
+t/cleanup_03_remove_nc.py
+
+## Multi-node cluster tests
+t/setup_01_install.py
+t/multi-db_cluster_setup-old-syntax.py
+t/multi-db_cluster_exercise_ace-old-syntax.py
+
+## Remove components, Clean environment and free ports
+t/cleanup_01_node_remove.py
+t/cleanup_03_remove_nc.py

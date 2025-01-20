@@ -1,0 +1,63 @@
+##
+# setup scripts
+##
+t/setup_01_install.py
+t/setup_03_node_install.py
+t/setup_04_node_setup.py
+
+##
+# node creation
+##
+t/spock_2_node_create.py
+##
+# sub-create
+##
+t/spock_3_sub_create.py
+##
+# enable autoDDL GUCS
+##
+t/6010_setup_autoddl_gucs_on_n1.pl
+t/6011_setup_autoddl_gucs_on_n2.pl
+##
+# autoDDL scripts
+##
+t/auto_ddl/6001_env_prereq_autoddl_setup_n1.sql
+t/auto_ddl/6100a_table_datatypes_create_alter_n1.sql
+t/auto_ddl/6100b_table_validate_and_drop_n2.sql
+t/auto_ddl/6100c_table_validate_n1.sql
+t/auto_ddl/6111a_table_tx_ctas_selectinto_like.sql
+t/auto_ddl/6111b_table_validate_and_drop_n2.sql
+t/auto_ddl/6111c_table_validate_n1.sql
+t/auto_ddl/6122a_table_range_partitions_n1.sql
+t/auto_ddl/6122b_table_range_partitions_validate_n2.sql
+t/auto_ddl/6122c_table_range_parition_validate_n1.sql
+t/auto_ddl/6133a_table_list_partitions_n1.sql
+t/auto_ddl/6133b_table_list_partitions_validate_n2.sql
+t/auto_ddl/6133c_table_list_parition_validate_n1.sql
+t/auto_ddl/6144a_table_hash_partitions_n1.sql
+t/auto_ddl/6144b_table_hash_partitions_validate_n2.sql
+t/auto_ddl/6144c_table_hash_parition_validate_n1.sql
+t/auto_ddl/6155a_index_n1.sql
+t/auto_ddl/6155b_index_validate_n2.sql
+t/auto_ddl/6155c_index_validate_drop_n1.sql
+t/auto_ddl/6166a_views_materialized_views_n1.sql
+t/auto_ddl/6166b_view_mat_views_validate_n2.sql
+t/auto_ddl/6166c_views_mat_view_validate_n1.sql
+t/auto_ddl/6177a_allow_ddl_from_func_proc_create_alter_n1.sql
+t/auto_ddl/6177b_allow_ddl_from_func_proc_validate_drop_n2.sql
+t/auto_ddl/6177c_allow_ddl_from_func_proc_validate_n1.sql
+t/auto_ddl/6666a_all_objects_create_n1.sql
+t/auto_ddl/6666b_all_objects_validate_and_drop_n2.sql
+t/auto_ddl/6666c_all_objects_validate_n1.sql
+t/auto_ddl/6901_env_cleanup_autoddl_n1.sql
+##
+# cleanup scripts
+##
+t/6910_teardown_autoddl_gucs_off_n1.pl
+t/6911_teardown_autoddl_gucs_off_n2.pl
+t/spock_6_drop.py
+
+##
+# uninstall pgedge
+##
+t/cleanup_01_node_remove.py

@@ -1,0 +1,43 @@
+
+## Setup
+t/setup_01_install.py
+#t/cluster-init-old-syntax.py
+t/cluster-init.py
+
+## Test Scripts
+t/spock_repair_function.py
+#t/spock_exception_table_case_discard1.py
+#t/spock_exception_table_case_discard2.py
+#t/spock_exception_table_case_discard3.py
+#t/spock_exception_table_case_sub-disable1.py
+#t/spock_exception_table_case_sub-disable2.py
+#t/spock_exception_table_case_sub-disable3.py
+t/spock_exception_table_case_transdiscard1.py
+t/spock_exception_table_case_transdiscard2.py
+t/spock_exception_table_case_transdiscard3.py
+
+# Clean up
+#t/cleanup_01_node_remove.py
+t/cleanup_03_remove_nc.py
+
+## Setup
+t/setup_01_install.py
+t/setup_03_node_install.py
+t/setup_04_node_setup.py
+
+## Test Scripts
+t/spock_node_add_interface.py
+t/spock_node_drop_interface.py
+t/spock_node_add_interface_no_db.py
+t/spock_node_drop_interface_no_interface.py
+t/spock_node_drop_interface_no_db.py
+
+t/spock_node_create_no_node_name.py
+t/spock_node_create_no_repset_user.py
+t/spock_node_create_no_dbname.py
+t/spock_node_create_no_dns.py
+
+## Clean up
+#t/cleanup_01_node_remove.py
+t/cleanup_03_remove_nc.py
+

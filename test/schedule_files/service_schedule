@@ -1,0 +1,17 @@
+## Set up a two node cluster
+t/setup_01_install.py
+t/setup_02_setup.py
+
+## Test Service Module
+t/service_reload_component.pl
+t/service_restart_component.pl
+t/service_start_component.pl
+t/service_stop_component.pl
+t/service_status_without_flag.pl
+t/service_enable_component.pl
+t/service_disable_component.pl
+t/service_enable_error.pl
+
+t/399_um_breakdown_script.pl
+
+t/cleanup_03_remove_nc.py

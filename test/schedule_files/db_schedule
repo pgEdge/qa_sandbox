@@ -1,0 +1,20 @@
+##
+#
+t/setup_01_install.py
+t/setup_03_node_install.py
+t/setup_04_node_setup.py
+t/spock_2_node_create.py
+
+t/db-guc-show.py
+t/db-guc-show-no-guc.py
+t/db-guc-show-wildcard.py
+t/db-guc-show-invalid-name.py
+
+t/db-guc-set.py
+t/db-guc-set-invalid-type.py
+t/db-guc-set-no-reload.py
+t/db-guc-set-invalid-value.py
+
+##Teardown Scripts
+t/cleanup_01_node_remove.py
+t/cleanup_03_remove_nc.py
