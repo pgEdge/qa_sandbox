@@ -26,7 +26,7 @@ def exit_message(p_msg, p_rc=1):
  
 
 # **************************************************************************************************************
-## Enable AutoDDL
+## Enable AutoDDL this is a comment blok
 # **************************************************************************************************************
 # To call this function, pass a connection string:
 #     command = util_test.enable_autoddl(host, dbname, port, pw, usr)
