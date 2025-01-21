@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} is running the test schedules.
 on:
   push:
     branches:
-      - GH_actions_test
+      - lahari
 
 jobs:
   run-scripts:
@@ -16,7 +16,7 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - name: Checkout snowflake
+    - name: Checkout test_pgbench
       uses: actions/checkout@v4
       with:
         ref: ${{ github.ref }}
@@ -49,7 +49,7 @@ jobs:
 
     - name: Run Test Harness (runner.py)
       run: |
-        python test/runner.py -c test/t/lib/${{ matrix.pgver }}config.env -s test/schedule_files/script_file -k
+        python test/runner.py -c test/t/lib/${{ matrix.pgver }}config.env -s test/schedule_files/pgbench_schedule -k
         cat latest.log
 
     - name: Upload Log File as Artifact
