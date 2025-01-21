@@ -10,9 +10,9 @@ RUN apk add --no-cache \
     clang \
     llvm
 
-WORKDIR /home/rocky/work/qa_sandbox/test
+WORKDIR /home/qa_sandbox/test
 
-COPY . /home/rocky/work/qa_sandbox/test
+COPY . /home/qa_sandbox/test
 
 RUN USE_PGXS=1 make && USE_PGXS=1 make install
 
