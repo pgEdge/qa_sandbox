@@ -28,7 +28,7 @@ jobs:
           sudo -u postgres psql -c '\du'
           echo "After psql"
 
-          ls -l /usr/lib/postgresql/16/bin
+          ls -l /usr/lib/postgresql/14/bin
           
       # Set up Python environment
       - name: Set up Python
