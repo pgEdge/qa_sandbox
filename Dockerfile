@@ -10,9 +10,9 @@ RUN apk add --no-cache \
     clang \
     llvm
 
-WORKDIR /home/qa_sandbox/test
+WORKDIR /home/postgres/qa_sandbox/
 
-COPY . /home/qa_sandbox/test
+COPY . /home/postgres/qa_sandbox/
 
 RUN USE_PGXS=1 make && USE_PGXS=1 make install
 
